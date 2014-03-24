@@ -8,9 +8,9 @@ var http = require('http'),
 // Data is default to new mysql installation and should be changed according to your configuration. 
 var connection = mysql.createConnection({
     host: "stardock.cs.virginia.edu",
-    user: "cs4720csg3mf",
+    user: "cs4720roe2pj",
     password: "spring2014",
-    database: "cs4720csg3mf"
+    database: "cs4720roe2pj"
 });
 
 http.createServer(function (request, response) {
