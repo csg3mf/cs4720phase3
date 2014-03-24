@@ -17,8 +17,6 @@ http.createServer(function (request, response) {
     
     // Get URL parameter
 	var pathname = url.parse(request.url).pathname;
-    var url_parts = url.parse(request.url, true);
-    var query = url_parts.query;
 
     pathname_split = pathname.split("/");
 
@@ -26,8 +24,6 @@ http.createServer(function (request, response) {
     latitude = pathname_split[0];
     longitutde = pathname_split[1];
 
-
-    console.log(latitude);
     // Query the database. 
 
         
