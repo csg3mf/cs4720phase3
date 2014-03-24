@@ -21,8 +21,8 @@ http.createServer(function (request, response) {
     pathname_split = pathname.split("/");
 
     // get the passed latitude and longitude
-    latitude = pathname_split[0];
-    longitutde = pathname_split[1];
+    latitude = pathname_split[1];
+    longitutde = pathname_split[2];
 
     // Query the database. 
 
