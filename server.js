@@ -27,21 +27,21 @@ http.createServer(function (request, response) {
     longitutde = pathname_split[1];
 
 
-
+    console.log(latitude);
     // Query the database. 
 
         
     connection.query('SELECT * from games;', function (error, rows, fields) {
-    response.writeHead(200, {
-        'Content-Type': 'text/plain'
-    });
+        response.writeHead(200, {
+            'Content-Type': 'text/plain'
+        });
 
 
 
-    // Send data as JSON string. 
-    // Rows variable holds the result of the query. 
-    response.write(JSON.stringify(rows));
-    response.end();
+        // Send data as JSON string. 
+        // Rows variable holds the result of the query. 
+        response.write(JSON.stringify(rows));
+        response.end();
     });
 
     
