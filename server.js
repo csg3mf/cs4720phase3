@@ -27,7 +27,7 @@ http.createServer(function (request, response) {
     // Query the database. 
 
         
-    connection.query('CALL getOpenGames(' + latitude +',' + longitude +');', function (error, rows, fields) {
+    connection.query('CALL getOpenGames(38.04,-78.503);', function (error, rows, fields) {
         response.writeHead(200, {
             'Content-Type': 'text/plain'
         });
