@@ -36,7 +36,7 @@ http.createServer(function (request, response) {
 
         // Send data as JSON string. 
         // Rows variable holds the result of the query. 
-        response.write(JSON.stringify(rows));
+        response.write(JSON.stringify(rows[0]));
         response.end();
     });
 
