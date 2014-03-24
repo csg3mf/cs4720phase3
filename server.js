@@ -31,15 +31,10 @@ http.createServer(function (request, response) {
     // Query the database. 
 
         
-    connection.query('CALL getNearbyGames(0,0);', function (error, rows, fields) {
+    connection.query('SELECT * from games;', function (error, rows, fields) {
     response.writeHead(200, {
         'Content-Type': 'text/plain'
     });
-
-
-
-
-
 
 
 
