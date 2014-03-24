@@ -22,12 +22,12 @@ http.createServer(function (request, response) {
 
     // get the passed latitude and longitude
     latitude = pathname_split[1];
-    longitutde = pathname_split[2];
+    longitude = pathname_split[2];
 
     // Query the database. 
 
         
-    connection.query('CALL getOpenGames(38.04,-78.503);', function (error, rows, fields) {
+    connection.query('CALL getOpenGames('+ latitude +','+ longitude +');', function (error, rows, fields) {
         response.writeHead(200, {
             'Content-Type': 'text/plain'
         });
