@@ -19,25 +19,22 @@ http.createServer(function (request, response) {
 	var pathname = url.parse(request.url).pathname;
     var url_parts = url.parse(request.url, true);
     var query = url_parts.query;
-     
+
     pathname_split = pathname.split("/");
 
-
-    // get the passed latitude and longitude values.
+    // get the passed latitude and longitude
     latitude = pathname_split[0];
     longitutde = pathname_split[1];
 
 
 
-
-
-
-
     // Query the database. 
-    connection.query('SELECT * FROM food' + " WHERE name =" + "'"+ pathname_split[1] + "'"  + ';', function (error, rows, fields) {
-        response.writeHead(200, {
-            'Content-Type': 'text/plain'
-        });
+
+        
+    connection.query('CALL getNearbyGames(0,0);', function (error, rows, fields) {
+    response.writeHead(200, {
+        'Content-Type': 'text/plain'
+    });
 
 
 
@@ -45,10 +42,11 @@ http.createServer(function (request, response) {
 
 
 
-        // Send data as JSON string. 
-        // Rows variable holds the result of the query. 
-        response.write(JSON.stringify(rows));
-        response.end();
+
+    // Send data as JSON string. 
+    // Rows variable holds the result of the query. 
+    response.write(JSON.stringify(rows));
+    response.end();
     });
 
     
